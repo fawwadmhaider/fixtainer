@@ -261,6 +261,12 @@
   }
 }
 
+@media (min-width: 721px) {
+  .fx-mobile-nav {
+    display: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
