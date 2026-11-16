@@ -190,16 +190,6 @@
   object-position: 58% center;
 }
 
-.fx-wordmark {
-  font-family: var(--font-display);
-  font-weight: 800;
-  letter-spacing: 0;
-}
-
-.fx-wordmark-x {
-  color: var(--fixtainer-green);
-}
-
 .fx-nav-link {
   color: var(--fixtainer-ice);
   transition: color 160ms ease;
