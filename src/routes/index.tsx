@@ -96,7 +96,7 @@ function Wordmark({ footer = false }: { footer?: boolean }) {
     <Link
       to="/"
       aria-label="FIXtainer home"
-      className={`inline-flex shrink-0 items-center ${footer ? "h-7" : "h-8"}`}
+      className={`inline-flex shrink-0 items-center bg-fixtainer-navy p-1 ${footer ? "h-8" : "h-9"}`}
     >
       <img
         src={fixtainerLogo.url}
