@@ -2,6 +2,7 @@ import { ArrowRight, ArrowUpRight, Check, FileCheck2, Wrench } from "lucide-reac
 import { createFileRoute, Link } from "@tanstack/react-router";
 
 import fieldServiceImage from "@/assets/fixtainer-field-service.jpg";
+import fixtainerLogo from "@/assets/fixtainer-logo.png.asset.json";
 
 const whatsappMessage = encodeURIComponent(
   "Hello FIXtainer team, I’d like to learn more about your field service platform.",
@@ -95,10 +96,15 @@ function Wordmark({ footer = false }: { footer?: boolean }) {
     <Link
       to="/"
       aria-label="FIXtainer home"
-      className={`fx-wordmark inline-flex items-center text-2xl leading-none text-fixtainer-navy ${footer ? "text-fixtainer-ice" : ""}`}
+      className={`inline-flex shrink-0 items-center ${footer ? "h-7" : "h-8"}`}
     >
-      FI<span className="fx-wordmark-x">X</span>tainer
-      <span aria-hidden="true" className="mb-4 ml-0.5 size-2 rounded-full bg-fixtainer-orange" />
+      <img
+        src={fixtainerLogo.url}
+        alt="FIXtainer"
+        width={1010}
+        height={170}
+        className={`h-full w-auto object-contain ${footer ? "max-w-40" : "max-w-40 sm:max-w-48"}`}
+      />
     </Link>
   );
 }
