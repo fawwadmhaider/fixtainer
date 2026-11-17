@@ -328,13 +328,19 @@ function HomePage() {
 
       <footer className="bg-background">
         <div className="mx-auto flex max-w-7xl flex-col gap-4 px-5 py-7 sm:flex-row sm:items-center sm:justify-between sm:px-8 lg:px-12">
-          <img
-            src={fixtainerTransparentWordmark}
-            alt="FIXtainer"
-            width={1469}
-            height={247}
-            className="h-8 w-auto max-w-40 object-contain"
-          />
+          <Link
+            to="/"
+            aria-label="FIXtainer home"
+            className="inline-flex h-8 shrink-0 items-center"
+          >
+            <img
+              src={fixtainerTransparentWordmark}
+              alt="FIXtainer"
+              width={1469}
+              height={247}
+              className="h-full w-auto max-w-40 object-contain"
+            />
+          </Link>
           <p className="text-sm text-muted-foreground">Enterprise operations &amp; field service ERP</p>
           <a href="#home-heading" className="inline-flex items-center gap-2 text-sm font-semibold text-foreground transition-colors hover:text-primary">
             Back to top <ArrowRight aria-hidden="true" className="size-4 -rotate-90" />
