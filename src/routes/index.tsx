@@ -3,6 +3,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 
 import fieldServiceImage from "@/assets/fixtainer-field-service.jpg";
 import fixtainerLogo from "@/assets/fixtainer-logo.png.asset.json";
+import fixtainerTransparentWordmark from "@/assets/fixtainer-wordmark-transparent.png";
 
 const whatsappMessage = encodeURIComponent(
   "Hello FIXtainer team, I’d like to learn more about your field service platform.",
@@ -327,7 +328,13 @@ function HomePage() {
 
       <footer className="bg-background">
         <div className="mx-auto flex max-w-7xl flex-col gap-4 px-5 py-7 sm:flex-row sm:items-center sm:justify-between sm:px-8 lg:px-12">
-          <Wordmark />
+          <img
+            src={fixtainerTransparentWordmark}
+            alt="FIXtainer"
+            width={1469}
+            height={247}
+            className="h-8 w-auto max-w-40 object-contain"
+          />
           <p className="text-sm text-muted-foreground">Enterprise operations &amp; field service ERP</p>
           <a href="#home-heading" className="inline-flex items-center gap-2 text-sm font-semibold text-foreground transition-colors hover:text-primary">
             Back to top <ArrowRight aria-hidden="true" className="size-4 -rotate-90" />
