@@ -5,10 +5,7 @@ import fieldServiceImage from "@/assets/fixtainer-field-service.jpg";
 import fixtainerLogo from "@/assets/fixtainer-logo.png.asset.json";
 import fixtainerTransparentWordmark from "@/assets/fixtainer-wordmark-transparent.png";
 
-const whatsappMessage = encodeURIComponent(
-  "Hello FIXtainer team, I’d like to learn more about your field service platform.",
-);
-const whatsappHref = `https://api.whatsapp.com/send?text=${whatsappMessage}`;
+const whatsappHref = "https://api.whatsapp.com/send/?phone=923082799984&text&type=phone_number&app_absent=0";
 
 const serviceSteps = [
   { number: "01", title: "Register the asset", detail: "Keep the equipment and its service history together." },
