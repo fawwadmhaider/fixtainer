@@ -1,5 +1,6 @@
 import { ArrowRight, ArrowUpRight, Check, FileCheck2, Wrench } from "lucide-react";
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useEffect, useRef, useState } from "react";
 
 import fieldServiceImage from "@/assets/fixtainer-field-service.jpg";
 import fixtainerLogo from "@/assets/fixtainer-logo.png.asset.json";
@@ -90,19 +91,39 @@ export const Route = createFileRoute("/")({
 });
 
 function Wordmark({ footer = false }: { footer?: boolean }) {
+  const [logoLoaded, setLogoLoaded] = useState(false);
+  const logoRef = useRef<HTMLImageElement>(null);
+
+  useEffect(() => {
+    const image = logoRef.current;
+    if (image?.complete && image.naturalWidth > 0) {
+      setLogoLoaded(true);
+    }
+  }, []);
+
   return (
     <Link
       to="/"
       aria-label="FIXtainer home"
       className={`inline-flex shrink-0 items-center ${footer ? "h-8 bg-fixtainer-navy p-1" : "h-8 bg-transparent p-0 sm:h-9"}`}
     >
-      <img
-        src={fixtainerLogo.url}
-        alt="FIXtainer"
-        width={1010}
-        height={170}
-        className={`h-full w-auto object-contain ${footer ? "max-w-40" : "max-w-40 sm:max-w-48"}`}
-      />
+      <span className="relative inline-flex h-full w-40 items-center sm:w-48">
+        <span
+          aria-hidden="true"
+          className={`font-display text-2xl font-extrabold leading-none text-fixtainer-ice ${logoLoaded ? "invisible" : "visible"}`}
+        >
+          FI<span className="text-fixtainer-green">X</span>tainer
+        </span>
+        <img
+          ref={logoRef}
+          src={fixtainerLogo.url}
+          alt="FIXtainer"
+          width={1010}
+          height={170}
+          onLoad={() => setLogoLoaded(true)}
+          className={`absolute inset-0 h-full w-full object-contain transition-opacity ${logoLoaded ? "opacity-100" : "opacity-0"}`}
+        />
+      </span>
     </Link>
   );
 }
